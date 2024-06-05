@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.nav-buttons{
+    margin-left: 65%;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h3{
+    font-size: 1.85rem;
+    font-weight: 800;
+}
+
+h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h6{
+    color: #d8d8d8;
+}
+
+h7{
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0px;
+    
+}
+
+button {
+
+    font-size: 0.8rem;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    background-color: #1d1d1d;
+    color:aliceblue;
+    padding: 13px 30px;
+    text-transform: uppercase;
+    cursor:pointer;
+    transition: 0.5s ease;
+}
+
+button:hover{
+    background-color: coral;
+}
+
+.navbar{
+    font-size: 16px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    top: 0;
+    left: 0;
+}
+
+.navbar-light .navbar-nav .nav-link{
+
+    padding: 0 20px;
+    color: #000;
+    transition: 0.4s ease;
+}
+
+
+
+.text-smaller{
+    transition: 0.4s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar i:hover,
+.navbar-light .navbar-nav .nav-link.active
+.navbar i:hover{
+    color: coral;
+}
+
+.navbar i {
+    font-size: 1.2rem;
+    padding: 0 20px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#home{
+    background-image: url('../imgs/back.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media only screen and (max-width:990px){
+    .nav-buttons{
+        margin: 10px;
+    }
+}
+
+.nav-buttons ul{
+    margin: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.nav-button ul .fas{
+    margin: 20px 5px 10px 20px;
+}
+
+#home span{
+    color:coral
+}
+
+#brand {
+    margin-bottom: -30px;
+}
+
+#brand .row img{
+    width: 100px;
+    margin: 85px 110px;
+}
+
+/* #nou .row {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#nou .one{
+    position: relative;
+    
+}
+*/
+#nou .one img {
+    max-width: 100%;
+    max-height: 400px; /* Set your desired max height */
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 0px;
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+
+
+#nou .box{
+    border: 2px solid #ddd;
+  padding: 120px;
+  margin: 35px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+#nou .one .detalii{
+    margin-top: -380px;
+    color: #08b1ee;
+    font-weight: bold;
+    transition: 0.4s ease;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100%; 
+    text-align: center;
+}
+
+#nou .detalii h2 {
+    margin-bottom: 50px;
+}
+
+#nou .p-pret {
+   margin-top: 30px;
+}
+
+
+#nou .vezi-produsul {
+    margin-top: 350px;
+    background-color: #2596be;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:0.4s ease;
+    display: flex;
+  }
+
+#nou .vezi-produsul:hover{
+    background-color: coral;
+  }
+
+.produsfavorit{
+    color: black;
+}
+ */
+
+ #nou .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#nou .one {
+    flex: 1 1 25%; /* Adjust this as necessary for responsive design */
+    padding: 10px; /* Space between the boxes */
+    box-sizing: border-box;
+}
+
+#nou .box {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 10px;
+}
+
+#nou .one .detalii{
+    color: #2596be;
+    font-weight: bold;
+    transition: 0.4s ease;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#nou .detalii h2 {
+    margin-bottom: 10px; /* Add space below the heading */
+}
+
+#nou .produsfavorit {
+    margin: 20px 0; /* Adjust margin as needed */
+}
+
+#nou .vezi-produsul {
+    margin-top: 20px;
+    background-color: #2596be;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    align-self: center; /* Center the button horizontally */
+}
+
+#nou .vezi-produsul:hover {
+    background-color: coral;
+}
+
+.produsfavorit {
+    color: black;
+}
+
+.star {
+    color: black;
+}
+
+/* Produs  */
+
+.img-fluid{
+    cursor:pointer;
+    margin-bottom: 2rem;
+}
+
+.img-fluid img {
+    transition: 0.3s all;
+}
+
+.img-fluid:hover{
+    opacity:0.7;
+}
