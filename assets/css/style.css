@@ -52,13 +52,13 @@ h7{
     
 }
 
-button {
+#home button {
 
     font-size: 0.8rem;
     font-weight: 900;
     outline: none;
     border: none;
-    background-color: #1d1d1d;
+    background-color:black;
     color:aliceblue;
     padding: 13px 30px;
     text-transform: uppercase;
@@ -66,7 +66,7 @@ button {
     transition: 0.5s ease;
 }
 
-button:hover{
+#home button:hover{
     background-color: coral;
 }
 
@@ -119,6 +119,8 @@ button:hover{
     align-items: flex-start;
 }
 
+
+
 @media only screen and (max-width:990px){
     .nav-buttons{
         margin: 10px;
@@ -140,6 +142,8 @@ button:hover{
     color:coral
 }
 
+/* BRANDURI */
+
 #brand {
     margin-bottom: -30px;
 }
@@ -149,127 +153,49 @@ button:hover{
     margin: 85px 110px;
 }
 
-/* #nou .row {
-    display:flex;
-    flex-wrap: wrap;
-}
-
-#nou .one{
-    position: relative;
-    
-}
-*/
-#nou .one img {
-    max-width: 100%;
-    max-height: 400px; /* Set your desired max height */
-    width: auto;
-    height: auto;
-    border-radius: 5px;
-    margin-top: 0px;
-    object-fit: contain; /* Ensures the image maintains its aspect ratio */
-}
-
-
-#nou .box{
-    border: 2px solid #ddd;
-  padding: 120px;
-  margin: 35px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-
-
-#nou .one .detalii{
-    margin-top: -380px;
-    color: #08b1ee;
-    font-weight: bold;
-    transition: 0.4s ease;
-    opacity: 0.8;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    align-items: center;
-    height: 100%; 
-    text-align: center;
-}
-
-#nou .detalii h2 {
-    margin-bottom: 50px;
-}
-
-#nou .p-pret {
-   margin-top: 30px;
-}
-
-
-#nou .vezi-produsul {
-    margin-top: 350px;
-    background-color: #2596be;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition:0.4s ease;
-    display: flex;
-  }
-
-#nou .vezi-produsul:hover{
-    background-color: coral;
-  }
-
-.produsfavorit{
-    color: black;
-}
- */
-
- #nou .row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#nou .one {
-    flex: 1 1 25%; /* Adjust this as necessary for responsive design */
-    padding: 10px; /* Space between the boxes */
-    box-sizing: border-box;
-}
-
+/* PRODUSE */
 #nou .box {
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
+}
+#nou .box img {
+        width: 300px;
+        height: 300px; /* Adjust the height as needed */
+        object-fit: cover; /* Maintain aspect ratio while filling the container */
+        border-radius: 5px;
+}
+#nou .detalii {
     padding: 10px;
 }
-
-#nou .one .detalii{
-    color: #2596be;
-    font-weight: bold;
-    transition: 0.4s ease;
-    opacity: 0.8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 15px;
-}
-
 #nou .detalii h2 {
-    margin-bottom: 10px; /* Add space below the heading */
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+#nou .detalii .produsfavorit {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+#nou .detalii .star i {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+#nou .detalii .p-pret {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #dc3545;
+}
+#nou .detalii .btn {
+    margin-top: 10px;
 }
 
 #nou .produsfavorit {
-    margin: 20px 0; /* Adjust margin as needed */
+    margin: 10px 0;
+    height: 3em; /* Set a fixed height for the product description container */
 }
 
 #nou .vezi-produsul {
@@ -281,7 +207,6 @@ button:hover{
     border-radius: 5px;
     cursor: pointer;
     transition: 0.4s ease;
-    align-self: center; /* Center the button horizontally */
 }
 
 #nou .vezi-produsul:hover {
