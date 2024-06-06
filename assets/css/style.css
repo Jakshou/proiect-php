@@ -420,8 +420,112 @@ footer .logo{
     margin-right: 10px;
 }
 
-.cos input{
+.cos td input{
     width: 40px;
     height: 30px;
     padding: 5px;
 }
+
+.cos td a{
+    color:#a31e23;
+}
+
+.cos .sterge-btn{
+    color: #a31e23;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cos .edit-btn{
+    color:#a31e23;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.cos .info-produs p{
+    margin: 3px;
+}
+
+.cos-total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cos-total table{
+    width: 100%;
+    max-width: 500px;
+    border-top: 3px solid #a31e23;
+}
+
+td:last-child{
+    text-align: right;
+}
+
+th:last-child{
+    text-align: right;
+}
+
+
+.checkout-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-btn{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #a31e23;
+    color: white;
+}
+
+/* Login */
+
+#login-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #a31e23;
+}
+
+#login-form input{
+    width: 50%;
+    margin: 5px auto;
+    display: flex;
+}
+
+#login-form #login-btn{
+    background-color: #a31e23;
+    color:white;
+    width: auto;
+}
+
+#login-form #register-url{
+    color:#a31e23 ;
+}
+
+#register-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #a31e23;
+}
+
+#register-form input{
+    width: 50%;
+    margin: 5px auto;
+    display: flex;
+}
+
+#register-form #login-btn{
+    background-color: #a31e23;
+    color:white;
+    width: auto;
+}
+
+#register-form #register-url{
+    color:#a31e23 ;
+}
+
+/* Inregistrare */
