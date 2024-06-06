@@ -76,6 +76,8 @@ h7{
     padding-bottom: 1rem !important;
     top: 0;
     left: 0;
+    box-shadow: 0 1px px rgba(0, 0, 0, 1);
+    background-color: white;
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -109,10 +111,10 @@ h7{
 #home{
     background-image: url('../imgs/back.jpg');
     width: 100%;
-    height: 100vh;
+    height: 600px;
     background-size: cover;
-    background-position-x: 0px;
-    background-position-y: 0px;
+    background-position-x: 200px;
+    background-position-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -234,4 +236,55 @@ h7{
 
 .img-fluid:hover{
     opacity:0.7;
+}
+
+footer {
+    background-color: #343a40; /* Change to your desired background color */
+    color: #ffffff; /* Change to your desired text color */
+    padding: 10px 0;
+}
+
+footer a {
+    color: #ffffff; /* Ensure links are also styled with the text color */
+}
+
+footer a:hover {
+    color: #2596be; /* Optional: Change the color when hovering over links */
+}
+
+footer .social a:hover{
+    color: coral;
+}
+
+footer h5{
+    font-weight: 450;
+}
+
+footer .plata{
+    width: 100px;
+    height: auto;
+}
+
+footer .plata:hover{
+    opacity: 1;
+}
+
+.category-bar {
+    background-color: coral; /* Blue background color */
+}
+.category-bar a {
+    color: white; /* White text color */
+}
+.category-bar .dropdown-menu {
+    background-color: #2596be; /* Blue background for dropdown */
+    border: none; /* Remove border */
+}
+.category-bar .dropdown-menu a {
+    color: white; /* White text color in dropdown */
+}
+.category-bar .nav-link {
+    padding: 10px 15px; /* Adjust padding for better spacing */
+}
+.navbar-nav .nav-item {
+    padding-right: 15px;
 }
