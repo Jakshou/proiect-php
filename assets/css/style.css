@@ -503,7 +503,7 @@ th:last-child{
 #login-form #register-url{
     color:#a31e23 ;
 }
-
+/* Inregistrare */
 #register-form{
     width: 50%;
     margin: 5px auto;
@@ -528,4 +528,105 @@ th:last-child{
     color:#a31e23 ;
 }
 
-/* Inregistrare */
+    /* Cont */
+
+    #account-form{
+        width: 50%;
+        margin: 35px auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #account-form input{
+        margin:5px auto;
+    }
+
+    #account-form #change-pass-btn{
+        color:white;
+        background-color: #a31e23;
+    }
+
+    .account-info #orders-btn,#logout-btn{
+        color:#a31e23;
+        text-decoration: none;
+    }
+
+    /* Comenzi */
+
+    .orders table{
+        width: 100%;
+        border: collapse;
+    }
+
+    .orders .info-produs{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .orders th{
+        padding: 5px 10px;
+        color: white;
+        background-color: #a31e23;
+        text-align: left;
+    }
+
+    .orders th:nth-child(2){
+        text-align: right;
+    }
+
+    .orders td{
+        padding: 10px 20px;
+    }
+
+    .orders td img{
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
+    }
+
+    /* CHECKOUT  */
+
+    #checkout-form {
+        display: inline-block;
+        text-align: center;
+    }
+
+    #checkout-form .checkout-small-element{
+        display: inline-block;
+        flex-direction: column;
+        text-align: center;
+        width: 48%;
+        margin: 10px 50px;
+    }
+
+    #checkout-form .checkout-large-element{
+        width: 48%;
+        margin: 10px 50px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    #checkout-form .checkout-btn-container{
+        margin: 10px;
+        text-align: center;
+        margin-right: 40px;
+    }
+
+    #checkout-form #checkout-btn{
+        color:white;
+        background-color: #a31e23;
+    }
+
+    #checkout-form #checkout-btn:hover{
+        opacity:0.8;
+    }
+
+    /* CONTACT  */
+
+    #contact span{
+        color:#a31e23;
+    }
+
+    #contact span2{
+        color:#2596be
+    }
