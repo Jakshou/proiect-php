@@ -297,3 +297,12 @@ footer .logo{
 .navbar-nav .nav-item {
     padding-right: 15px;
 }
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+}
