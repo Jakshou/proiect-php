@@ -252,6 +252,11 @@ footer a:hover {
     color: #2596be; /* Optional: Change the color when hovering over links */
 }
 
+footer .social .fab{
+    margin: 20px; 
+    font-size: x-large;
+}
+
 footer .social a:hover{
     color: #a31e23;
 }
@@ -280,11 +285,11 @@ footer .logo{
     color: white; /* White text color */
 }
 .category-bar .dropdown-menu {
-    background-color: #094066; /* Blue background for dropdown */
+    background-color: white; /* Blue background for dropdown */
     border: none; /* Remove border */
 }
 .category-bar .dropdown-menu a {
-    color: white; /* White text color in dropdown */
+    color: black; /* White text color in dropdown */
 }
 .category-bar .nav-link {
     padding: 10px 15px; /* Adjust padding for better spacing */
