@@ -67,7 +67,7 @@ h7{
 }
 
 #home button:hover{
-    background-color: coral;
+    background-color: #a31e23;
 }
 
 .navbar{
@@ -97,7 +97,7 @@ h7{
 .navbar i:hover,
 .navbar-light .navbar-nav .nav-link.active
 .navbar i:hover{
-    color: coral;
+    color: #a31e23;
 }
 
 .navbar i {
@@ -141,7 +141,7 @@ h7{
 }
 
 #home span{
-    color:coral
+    color:#a31e23
 }
 
 /* BRANDURI */
@@ -202,7 +202,7 @@ h7{
 
 #nou .vezi-produsul {
     margin-top: 20px;
-    background-color: #2596be;
+    background-color: #094066;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -212,7 +212,7 @@ h7{
 }
 
 #nou .vezi-produsul:hover {
-    background-color: coral;
+    background-color: #a31e23;
 }
 
 .produsfavorit {
@@ -253,7 +253,7 @@ footer a:hover {
 }
 
 footer .social a:hover{
-    color: coral;
+    color: #a31e23;
 }
 
 footer h5{
@@ -269,14 +269,18 @@ footer .plata:hover{
     opacity: 1;
 }
 
+footer .logo{
+    width: 200px;
+}
+
 .category-bar {
-    background-color: coral; /* Blue background color */
+    background-color: #a31e23; /* Blue background color */
 }
 .category-bar a {
     color: white; /* White text color */
 }
 .category-bar .dropdown-menu {
-    background-color: #2596be; /* Blue background for dropdown */
+    background-color: #094066; /* Blue background for dropdown */
     border: none; /* Remove border */
 }
 .category-bar .dropdown-menu a {
