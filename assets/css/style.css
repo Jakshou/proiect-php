@@ -301,8 +301,127 @@ footer .logo{
 .small-img-group{
     display: flex;
     justify-content: space-between;
+    cursor:pointer;
 }
 
 .small-img-col{
     flex-basis: 24%;
+
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.single-product input:focus{
+    outline: none;
+}
+
+.single-product .buy-btn{
+    background-color: #a31e23;
+    opacity: 1;
+    transition: 0.4 sec all;
+    color: white;
+    height: 40px;
+    width: 25%;
+}
+
+.single-product .buy-btn:hover{
+    background-color: #000;
+}
+
+#similare .box{
+    border: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#similare .box img{
+    width: 300px;
+        height: 300px; /* Adjust the height as needed */
+        object-fit: cover; /* Maintain aspect ratio while filling the container */
+        border-radius: 5px;
+}
+
+#similare .vezi-produsul {
+    margin-top: 20px;
+    background-color: #094066;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+#similare .detalii {
+    padding: 10px;
+}
+#similare .detalii h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+#similare .detalii .produsfavorit {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+#similare .detalii .star i {
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+#similare .detalii .p-pret {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #dc3545;
+}
+#similare .detalii .btn {
+    margin-top: 10px;
+}
+
+#similare .produsfavorit {
+    margin: 10px 0;
+    height: 3em; /* Set a fixed height for the product description container */
+}
+
+/* Cos */
+
+.cos table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cos .info-produs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cos th{
+    text-align: left;
+    padding: 5px 10px;
+    color:white;
+    background-color: #a31e23;
+}
+
+.cos td{
+    padding: 10px 20px;
+}
+
+.cos td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.cos input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
 }
