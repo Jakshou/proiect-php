@@ -76,52 +76,59 @@
     </div>
 </nav>
 
+<!-- Home -->
+<section id="home">
+    <div class="container text-center text-md-start">
+        <h5><strong>SUPER CATALOG!</strong></h5>
+        <h1><span>SUPER PRETURI</span> pentru cei mici si cei mari!</h1>
+        <p>Oferim cele mai mici preturi!</p>
+        <button class="btn btn-primary">Vezi aici catalogul</button>
+    </div>
+</section>
 
+<!-- TEXT PARTENERI -->
+<section id="parteneri" class="text-center my-5">
+    <h2>PARTENERI</h2>
+</section>
 
-    <!-- Home -->
-    <section id="home">
-        <div class="container text-center text-md-start">
-            <h5><strong>SUPER CATALOG!</strong></h5>
-            <h1><span>SUPER PRETURI</span> pentru cei mici si cei mari!</h1>
-            <p>Oferim cele mai mici preturi!</p>
-            <button class="btn btn-primary">Vezi aici catalogul</button>
+<!-- Branduri -->
+<section id="brand" class="container">
+    <div class="row justify-content-center p-0 m-0">
+        <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
+            <img class="img-fluid" src="assets/imgs/brand1.jpeg" alt="Brand 1"/>
         </div>
-    </section>
-
-    <!-- TEXT PARTENERI -->
-    <section id="parteneri" class="text-center my-5">
-        <h2>PARTENERI</h2>
-    </section>
-
-    <!-- Branduri -->
-    <section id="brand" class="container">
-        <div class="row justify-content-center p-0 m-0">
-            <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
-                <img class="img-fluid" src="assets/imgs/brand1.jpeg" alt="Brand 1"/>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
-                <img class="img-fluid" src="assets/imgs/brand2.jpeg" alt="Brand 2"/>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
-                <img class="img-fluid" src="assets/imgs/brand3.jpeg" alt="Brand 3"/>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
-                <img class="img-fluid" src="assets/imgs/brand4.jpeg" alt="Brand 4"/>
-            </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
+            <img class="img-fluid" src="assets/imgs/brand2.jpeg" alt="Brand 2"/>
         </div>
-    </section>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
+            <img class="img-fluid" src="assets/imgs/brand3.jpeg" alt="Brand 3"/>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6 col-6 p-2">
+            <img class="img-fluid" src="assets/imgs/brand4.jpeg" alt="Brand 4"/>
+        </div>
+    </div>
+</section>
 
-    <!-- Nou -->
-    <section id="nou" class="w-100 py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <!-- Unu -->
+<!-- Nou -->
+
+<section id="nou" class="w-100 py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <?php 
+            include('server/get_featured_products.php'); 
+
+            echo "<!-- Checking if featured_products is set and has rows -->";
+
+            if ($featured_products && $featured_products->num_rows > 0) {
+                echo "<!-- Found " . $featured_products->num_rows . " featured products -->";
+                while($row = $featured_products->fetch_assoc()) { 
+            ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="box">
-                        <img class="img-fluid" src="assets/imgs/1.jpeg" alt="Product Image">
+                        <img class="img-fluid" src="assets/imgs/<?php echo htmlspecialchars($row['product_image']); ?>" alt="Product Image">
                         <div class="detalii">
                             <h2>TOP FAVORITE!</h2>
-                            <p class="produsfavorit">Telefon SAMSUNG Galaxy S24 Ultra 5G</p>
+                            <p class="produsfavorit"><?php echo htmlspecialchars($row['product_name']); ?></p>
                             <div class="star">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -129,112 +136,42 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="p-pret">4.499 Lei</h4>
+                            <h4 class="p-pret"><?php echo htmlspecialchars($row['product_price']); ?> Lei</h4>
                             <button class="btn btn-primary vezi-produsul">Vezi produsul</button>
                         </div>
                     </div>
                 </div>
-                <!-- Doi -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="box">
-                        <img class="img-fluid" src="assets/imgs/2.jpeg" alt="Product Image">
-                        <div class="detalii">
-                            <h2>TOP FAVORITE!</h2>
-                            <p class="produsfavorit">Telefon APPLE iPhone 15 Pro 5G</p>
-                            <div class="star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="p-pret">6.499 Lei</h4>
-                            <button class="btn btn-primary vezi-produsul">Vezi produsul</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Trei -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="box">
-                        <img class="img-fluid" src="assets/imgs/3.jpeg" alt="Product Image">
-                        <div class="detalii">
-                            <h2>TOP FAVORITE!</h2>
-                            <p class="produsfavorit">Laptop Gaming ASUS TUF Gaming A15</p>
-                            <div class="star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="p-pret">4.999 Lei</h4>
-                            <button class="btn btn-primary vezi-produsul">Vezi produsul</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Patru -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="box">
-                        <img class="img-fluid" src="assets/imgs/4.jpeg" alt="Product Image">
-                        <div class="detalii">
-                            <h2>TOP FAVORITE!</h2>
-                            <p class="produsfavorit">Monitor Gaming LED IPS DELL G2422HS</p>
-                            <div class="star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h4 class="p-pret">1.399 Lei</h4>
-                            <button class="btn btn-primary vezi-produsul">Vezi produsul</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php 
+                }
+            } else {
+                echo "<!-- No featured products found -->";
+                echo "<p>No featured products found.</p>";
+            }
+            ?>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="mt-5 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <a href="https://feaa.ugal.ro/"><img src="assets/imgs/logo2.jpeg" alt="Logo" class="logo img-fluid"></a>
-                    <p class="pt-3">Cel mai bun raport pret-calitate</p>
-                    <img src="assets/imgs/plata.jpeg" class="plata img-fluid">
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <h5 class="pb-2">Contacteaza-ne</h5>
-                    <p><strong>Adresa:</strong> Strada Garii, Nr. 123</p>
-                    <p><strong>Telefon:</strong> +40 123 456 789</p>
-                    <p><strong>Email:</strong> info@raol.com</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <h5 class="pb-2">Informatii</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Despre noi</a></li>
-                        <li><a href="#">Termeni si conditii</a></li>
-                        <li><a href="#">Politica de confidentialitate</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <h5 class="pb-2">Urmareste-ne</h5>
-                    <div class="social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+
+
+
+<!-- Footer -->
+<footer class="mt-5 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <a href="https://feaa.ugal.ro/"><img src="assets/imgs/logo2.jpeg" alt="Logo" class="logo img-fluid"></a>
+                <p class="pt-3">Cel mai bun raport pret-calitate</p>
+                <img src="assets/imgs/plata.jpeg" class="plata img-fluid">
             </div>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-</body>
-</html>
-<?php
-
-?>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <h5 class="pb-2">Contacteaza-ne</h5>
+                <p><strong>Adresa:</strong> Strada Garii, Nr. 123</p>
+                <p><strong>Telefon:</strong> +40 123 456 789</p>
+                <p><strong>Email:</strong> info@raol.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <h5 class="pb-2">Informatii</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Despre noi</a></li>
+                    <li><a href="#">Termeni si conditii</a></li

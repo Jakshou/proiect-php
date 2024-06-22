@@ -630,3 +630,8 @@ th:last-child{
     #contact span2{
         color:#2596be
     }
+
+    .register-btn{
+        display: flex;
+        font-size: 100p;
+    }
