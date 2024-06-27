@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 
 session_start();
 
@@ -46,13 +46,15 @@ if(isset($_POST['add_to_cart'])){
         $_SESSION['cos'][$product_id] = $product_array;
 
     }
+    //calculeaza total
+    calculeazaTotalCos();
 
 //stergere produs din cos
 }else if(isset($_POST['remove_product'])){
     
     $product_id = $_POST['product_id'];
     unset($_SESSION['cos'][$product_id]);
-
+    calculeazaTotalCos();
 } else if (isset($_POST['edit_quantity'])) {
 
     $product_id = $_POST['product_id'];
@@ -68,12 +70,27 @@ if(isset($_POST['add_to_cart'])){
     } else {
         echo '<script>alert("Cantitatea produsului nu este setată.");</script>';
     }
-
+    calculeazaTotalCos();
              
     }else{
-        header('location: index.php');
+        // header('location: index.php');
 }
 
+function calculeazaTotalCos(){
+
+    $total = 0;
+
+    foreach($_SESSION['cos'] as $key => $value){
+
+
+        $product = $_SESSION['cos'][$key];
+        $price = $product['product_price'];
+        $quantity = $product['product_quantity'];
+        $total = $total + ($price * $quantity);
+
+    }
+    $_SESSION['total'] = $total;
+}
 
 
 ?>
@@ -113,13 +130,13 @@ if(isset($_POST['add_to_cart'])){
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
       
                     <li class="nav-item">
-                        <a href="cos.html" class="nav-link">
+                        <a href="cos.php" class="nav-link">
                             <i class="fas fa-solid fa-cart-shopping"></i>
                             <span class="text-smaller">Cosul meu</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                      <a href="cont.html" class="nav-link">
+                      <a href="cont.php" class="nav-link">
                           <i class="fas fa-solid fa-user"></i>
                       </a>
                   </li>
@@ -140,7 +157,7 @@ if(isset($_POST['add_to_cart'])){
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="produseDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Produse
+                          ☰ Produse
                           </a>
                           <div class="dropdown-menu" aria-labelledby="produseDropdown">
                             <a class="dropdown-item" href="telefoane.html">Telefoane</a>
@@ -149,7 +166,7 @@ if(isset($_POST['add_to_cart'])){
                           </div>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="#">Suport Clienti</a>
+                      <a class="nav-link" href="contact.html">Suport Clienti</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="#">Magazine</a>
@@ -202,8 +219,9 @@ if(isset($_POST['add_to_cart'])){
                     </td>
 
                     <td>
+                     
                         <span>lei</span>
-                        <span class="pret-produs">2000</span>
+                        <span class="pret-produs"><?php echo $value['product_quantity'] * $value['product_price']; ?></span>
                     </td>
                 </tr>
                 <?php } ?>
@@ -212,18 +230,17 @@ if(isset($_POST['add_to_cart'])){
            <div class="cos-total">
             <table>
                 <tr>
-                    <td>Subtotal</td>
-                    <td>lei 2000</td>
-                </tr>
-                <tr>
                     <td>Total</td>
-                    <td>lei 2000</td>
+                    <td><?php echo $_SESSION['total']?> Lei </td>
                 </tr>
             </table>
            </div>
 
            <div class="checkout-container"> 
-                <button class="btn checkout-btn">Checkout</button>
+                <form method="POST" action="checkout.php">
+                <input type="submit" class="btn checkout-btn" value="Checkout" name="checkout">
+                </form>
+                
            </div>
 
        </section>

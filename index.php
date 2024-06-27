@@ -31,13 +31,13 @@
           <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
 
               <li class="nav-item">
-                  <a href="cos.html" class="nav-link">
+                  <a href="cos.php" class="nav-link">
                       <i class="fas fa-solid fa-cart-shopping"></i>
                       <span class="text-smaller">Cosul meu</span>
                   </a>
               </li>
               <li class="nav-item">
-                <a href="cont.html" class="nav-link">
+                <a href="cont.php" class="nav-link">
                     <i class="fas fa-solid fa-user"></i>
                 </a>
             </li>
@@ -57,7 +57,7 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="produseDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" >
-                        ☰ Produse
+                     ☰ Produse
                     </a>
                     <div class="dropdown-menu" aria-labelledby="produseDropdown">
                         <a class="dropdown-item" href="telefoane.html">Telefoane</a>
@@ -117,10 +117,10 @@
             <?php 
             include('server/get_featured_products.php'); 
 
-            echo "<!-- Checking if featured_products is set and has rows -->";
+            echo "<!-- verifica daca exista produse -->";
 
             if ($featured_products && $featured_products->num_rows > 0) {
-                echo "<!-- Found " . $featured_products->num_rows . " featured products -->";
+                echo "<!-- Gasite " . $featured_products->num_rows . " produse -->";
                 while($row = $featured_products->fetch_assoc()) { 
             ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -144,8 +144,8 @@
             <?php 
                 }
             } else {
-                echo "<!-- No featured products found -->";
-                echo "<p>No featured products found.</p>";
+                echo "<!-- Nu au fost gasite produse -->";
+                echo "<p>Nu au fost gasite produse.</p>";
             }
             ?>
         </div>
@@ -157,21 +157,42 @@
 
 <!-- Footer -->
 <footer class="mt-5 py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <a href="https://feaa.ugal.ro/"><img src="assets/imgs/logo2.jpeg" alt="Logo" class="logo img-fluid"></a>
-                <p class="pt-3">Cel mai bun raport pret-calitate</p>
-                <img src="assets/imgs/plata.jpeg" class="plata img-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                    <a href="https://feaa.ugal.ro/"><img src="assets/imgs/logo2.jpeg" alt="Logo" class="logo img-fluid"></a>
+                    <p class="pt-3">Cel mai bun raport pret-calitate</p>
+                    <img src="assets/imgs/plata.jpeg" class="plata img-fluid">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                    <h5 class="pb-2">Contacteaza-ne</h5>
+                    <p><strong>Adresa:</strong> Strada Garii, Nr. 123</p>
+                    <p><strong>Telefon:</strong> +40 123 456 789</p>
+                    <p><strong>Email:</strong> info@raol.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                    <h5 class="pb-2">Informatii</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Despre noi</a></li>
+                        <li><a href="#">Termeni si conditii</a></li>
+                        <li><a href="#">Politica de confidentialitate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                    <h5 class="pb-2">Urmareste-ne</h5>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <h5 class="pb-2">Contacteaza-ne</h5>
-                <p><strong>Adresa:</strong> Strada Garii, Nr. 123</p>
-                <p><strong>Telefon:</strong> +40 123 456 789</p>
-                <p><strong>Email:</strong> info@raol.com</p>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                <h5 class="pb-2">Informatii</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Despre noi</a></li>
-                    <li><a href="#">Termeni si conditii</a></li
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>

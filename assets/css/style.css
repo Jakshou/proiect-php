@@ -535,6 +535,13 @@ th:last-child{
     color:#a31e23 ;
 }
 
+#register-form #register-btn{
+background-color: #a31e23;
+    color:white;
+    width: auto;
+}
+
+
     /* Cont */
 
     #account-form{
@@ -574,11 +581,11 @@ th:last-child{
         padding: 5px 10px;
         color: white;
         background-color: #a31e23;
-        text-align: left;
+        /* text-align: left; */
     }
 
     .orders th:nth-child(2){
-        text-align: right;
+        /* text-align: right; */
     }
 
     .orders td{
@@ -589,6 +596,12 @@ th:last-child{
         width: 80px;
         height: 80px;
         margin-right: 10px;
+    }
+
+    .orders .detalii-comanda-btn{
+        color:white;
+        background-color: #a31e23;
+
     }
 
     /* CHECKOUT  */
