@@ -125,10 +125,10 @@
             ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="box">
-                        <img class="img-fluid" src="assets/imgs/<?php echo htmlspecialchars($row['product_image']); ?>" alt="Product Image">
+                        <img class="img-fluid" src="assets/imgs/<?php echo $row['product_image']; ?>" alt="Product Image">
                         <div class="detalii">
                             <h2>TOP FAVORITE!</h2>
-                            <p class="produsfavorit"><?php echo htmlspecialchars($row['product_name']); ?></p>
+                            <p class="produsfavorit"><?php echo$row['product_name']; ?></p>
                             <div class="star">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -136,8 +136,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h4 class="p-pret"><?php echo htmlspecialchars($row['product_price']); ?> Lei</h4>
-                            <button class="btn btn-primary vezi-produsul">Vezi produsul</button>
+                            <h4 class="p-pret"><?php echo $row['product_price']; ?> Lei</h4>
+                            <a href="<?php echo "single_product.php?product_id=".$row['product_id'];?>"><button class="btn btn-primary vezi-produsul">Vezi produsul</button></a>
                         </div>
                     </div>
                 </div>

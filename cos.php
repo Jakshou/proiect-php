@@ -1,3 +1,84 @@
+<?php 
+
+session_start();
+
+if(isset($_POST['add_to_cart'])){
+
+    //daca user-ul deja a adaugat un prodsu in cos
+    if(isset($_SESSION['cos'])){
+        $product_array_ids = array_column($_SESSION['cos'],"product_id");
+        //verifica daca produsul a fost adaugat deja
+        if(!in_array($_POST['product_id'], $product_array_ids)){
+
+            $product_id = $_POST['product_id'];
+            
+            $product_array = array(
+                            'product_id' => $_POST['product_id'],
+                            'product_name' => $_POST['product_name'],
+                            'product_price' => $_POST['product_price'],
+                            'product_image' => $_POST['product_image'],
+                            'product_quantity' => isset($_POST['product_quantity']) ? $_POST['product_quantity'] : 1 // Default to 1 if not set
+                );
+
+                $_SESSION['cos'][$product_id] = $product_array;
+            //produsul a fost adaugat deja
+        }else{
+            echo '<script>alert("Produsul este deja in cos!");</script>';
+        }
+
+
+        //daca e primul produs
+    }else{
+        $product_id = $_POST['product_id'];
+        $product_name = $_POST['product_name'];
+        $product_price = $_POST['product_price'];
+        $product_image = $_POST['product_image'];
+        $product_quantity = isset($_POST['product_quantity']) ? $_POST['product_quantity'] : 1;
+
+        $product_array = array(
+                        'product_id' => $product_id,
+                        'product_name' => $product_name,
+                        'product_price' => $product_price,
+                        'product_image' => $product_image,
+                        'product_quantity' => $product_quantity
+        );
+
+        $_SESSION['cos'][$product_id] = $product_array;
+
+    }
+
+//stergere produs din cos
+}else if(isset($_POST['remove_product'])){
+    
+    $product_id = $_POST['product_id'];
+    unset($_SESSION['cos'][$product_id]);
+
+} else if (isset($_POST['edit_quantity'])) {
+
+    $product_id = $_POST['product_id'];
+    
+    // Ensure product_quantity is set before using it
+    if (isset($_POST['product_quantity'])) {
+        $product_quantity = $_POST['product_quantity'];
+
+        $product_array = $_SESSION['cos'][$product_id];
+        $product_array['product_quantity'] = $product_quantity;
+        
+        $_SESSION['cos'][$product_id] = $product_array;
+    } else {
+        echo '<script>alert("Cantitatea produsului nu este setată.");</script>';
+    }
+
+             
+    }else{
+        header('location: index.php');
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,79 +172,41 @@
                     <th>Cantitate</th>
                     <th>Subtotal</th>
                 </tr>
+            <?php foreach($_SESSION['cos'] as $key => $value) { ?>
+
                 <tr>
                     <td>
                         <div class="info-produs">
-                            <img src="assets/imgs/LAPTOPURI/acer.jpeg"/>
+                            <img src="assets/imgs/<?php echo $value['product_image'];?>"/>
                             <div>
-                                <p>TEST</p>
-                                <small><span>lei</span>2000</small>
-                                <a class="sterge-btn" href="#">Stergere produs</a>
+                                <p><?php echo $value['product_name'];?></p>
+                                <small><?php echo $value['product_price'];?><span> Lei</span></small>
+                                <br>
+                                <form method="POST" action="cos.php">
+                                    <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+                                    <input type="submit" name="remove_product" class="remove-btn" value="Sterge produs"/>
+                                </form>
+                                
                             </div>
                         </div>
                     </td>
 
                     <td>
-                        <input type="number" value="1"/>
-                        <a class="edit-btn" href="#">Editeaza</a>
+                        
+                        <form method="POST" action="cos.php">
+                            <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+                            <input type="number" name="product_quantity" value="<?php echo $value['product_quantity']; ?>"/>
+                            <input type="submit" class="edit-btn" value="edit" name="edit_quantity"/>
+                        </form>
+                        
                     </td>
 
                     <td>
                         <span>lei</span>
                         <span class="pret-produs">2000</span>
                     </td>
-
                 </tr>
-
-            </tr>
-            <tr>
-                <td>
-                    <div class="info-produs">
-                        <img src="assets/imgs/LAPTOPURI/acer.jpeg"/>
-                        <div>
-                            <p>TEST</p>
-                            <small><span>lei</span>2000</small>
-                            <a class="sterge-btn" href="#">Stergere produs</a>
-                        </div>
-                    </div>
-                </td>
-
-                <td>
-                    <input type="number" value="1"/>
-                    <a class="edit-btn" href="#">Editeaza</a>
-                </td>
-
-                <td>
-                    <span>lei</span>
-                    <span class="pret-produs">2000</span>
-                </td>
-
-            </tr>
-
-        </tr>
-        <tr>
-            <td>
-                <div class="info-produs">
-                    <img src="assets/imgs/LAPTOPURI/acer.jpeg"/>
-                    <div>
-                        <p>TEST</p>
-                        <small><span>lei</span>2000</small>
-                        <a class="sterge-btn" href="#">Stergere produs</a>
-                    </div>
-                </div>
-            </td>
-
-            <td>
-                <input type="number" value="1"/>
-                <a class="edit-btn" href="#">Editeaza</a>
-            </td>
-
-            <td>
-                <span>lei</span>
-                <span class="pret-produs">2000</span>
-            </td>
-
-        </tr>
+                <?php } ?>
             </table>
 
            <div class="cos-total">

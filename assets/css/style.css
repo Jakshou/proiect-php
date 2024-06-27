@@ -430,16 +430,14 @@ footer .logo{
     color:#a31e23;
 }
 
-.cos .sterge-btn{
-    color: #a31e23;
-    text-decoration: none;
-    font-size: 14px;
-}
 
 .cos .edit-btn{
     color:#a31e23;
     text-decoration: none;
     font-size: 15px;
+    background-color: white;
+    border: none;
+    width: 100%;
 }
 
 .cos .info-produs p{
@@ -455,6 +453,15 @@ footer .logo{
     width: 100%;
     max-width: 500px;
     border-top: 3px solid #a31e23;
+}
+
+.cos .remove-btn{
+    color: #a31e23;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    width: 150px;
+    text-align: center;
 }
 
 td:last-child{

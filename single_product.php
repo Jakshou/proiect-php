@@ -1,3 +1,23 @@
+<?php 
+include('server/connection.php');
+if(isset($_GET['product_id'])){
+
+    $product_id = $_GET['product_id'];
+
+    $stmt = $conn->prepare("SELECT * FROM products WHERE product_id = ?");
+    $stmt->bind_param("i",$product_id);
+    $stmt->execute();
+    $product = $stmt->get_result();
+
+}else{
+    header('location: index.php');
+}
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,35 +99,51 @@
       </nav>
 
 
-<!-- Single product       -->
+<!-- Produs       -->
 <section class="container single-product  my-5 pt-5">
     <div class="row mt-5">
+
+    <?php while($row = $product->fetch_assoc()) {?>
+        
+
         <div class="col-lg-5 col-md-6 col-sm-12">
-            <img id="mainImg" class="img-fluid w-100 pb-1" src="assets/imgs/LAPTOPURI/acer.jpeg"/>
+            <img id="mainImg" class="img-fluid w-100 pb-1" src="assets/imgs/<?php echo $row['product_image']; ?>"/>
             <div class="small-img-group">
                 <div class="small-img-col">
-                    <img src="assets/imgs/LAPTOPURI/hp2in1.jpeg" width="100%" class="small-img"/>
+                    <img src="assets/imgs/<?php echo $row['product_image']; ?>" width="100%" class="small-img"/>
                 </div>
                 <div class="small-img-col">
-                    <img src="assets/imgs/LAPTOPURI/hp2in1.jpeg" width="100%" class="small-img"/>
+                    <img src="assets/imgs/<?php echo $row['product_image2']; ?>" width="100%" class="small-img"/>
                 </div>
                 <div class="small-img-col">
-                    <img src="assets/imgs/LAPTOPURI/hp2in1.jpeg" width="100%" class="small-img"/>
+                    <img src="assets/imgs/<?php echo $row['product_image3']; ?>" width="100%" class="small-img"/>
                 </div>
                 <div class="small-img-col">
-                    <img src="assets/imgs/LAPTOPURI/hp2in1.jpeg" width="100%" class="small-img"/>
+                    <img src="assets/imgs/<?php echo $row['product_image4']; ?>" width="100%" class="small-img"/>
                 </div>
             </div>
         </div>
+
+        
+
         <div class="col-lg-6 col-md-12 col-12">
             <h6>Laptopuri</h6>
-            <h3 class="py-4">Laptop ACER Aspire 3 A315-24P-R9WY</h3>
-            <h2>1000 lei</h2>
-            <input type="number" value="1"/>
-            <button class="buy-btn">Adauga in cos</button>
+            <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
+            <h2><?php echo $row['product_price']; ?> Lei</h2>
+            <form method="POST" action="cos.php">
+            <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>"/>
+            <input type="hidden" name="product_image" value="<?php echo $row['product_image']; ?>"/>
+            <input type="hidden" name="product_name" value="<?php echo $row['product_name']; ?>"/>
+            <input type="hidden" name="product_price" value="<?php echo $row['product_price']; ?>"/>
+
+            <input type="number" name="product_quantity" value="1"/>
+            <button class="buy-btn" type="submit" name="add_to_cart"> Adauga in cos</button>
+            </form>
             <h4 class="mt-5 mb-5">Detalii produs</h4>
-            <span>AMD Ryzen 5 7520U pana la 4.3GHz, 15.6" Full HD, 16GB, SSD 512GB, AMD Radeon 610M Graphics, Free Dos, argintiu</span>
+            <span><?php echo $row['product_description']; ?></span>
         </div>
+        
+        <?php } ?>
     </div>
 </section>
 
